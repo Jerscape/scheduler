@@ -7,19 +7,29 @@ import {
 } from "helpers/selectors";
 
 import useApplicationData from "hooks/useApplicationData";
+import useVisualMode from "hooks/useVisualMode";
 
 import "components/Application.scss";
 
 import DayList from "components/DayList";
 import Appointment from "components/Appointment";
 
+
+
 export default function Application(props) {
+
+
+
   const {
     state,
     setDay,
     bookInterview,
     cancelInterview
   } = useApplicationData();
+
+
+
+  
 
   const interviewers = getInterviewersForDay(state, state.day);
 
@@ -33,6 +43,7 @@ export default function Application(props) {
           interviewers={interviewers}
           bookInterview={bookInterview}
           cancelInterview={cancelInterview}
+
         />
       );
     }
